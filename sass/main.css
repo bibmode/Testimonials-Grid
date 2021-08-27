@@ -164,6 +164,22 @@ body {
   font-size: 1.8rem;
   padding: 2rem 3.2rem;
   border-radius: 10px;
+  position: relative;
+}
+
+.box__bg {
+  position: absolute;
+  top: 0.8rem;
+  right: 15%;
+  z-index: 1;
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
+@media (max-width: 50em) {
+  .box__bg {
+    right: 8%;
+  }
 }
 
 .client-info {
@@ -173,6 +189,7 @@ body {
   width: -moz-max-content;
   width: max-content;
   height: 50px;
+  z-index: 10;
   -ms-grid-columns: 55px max-content;
       grid-template-columns: 55px -webkit-max-content;
       grid-template-columns: 55px max-content;
@@ -206,12 +223,14 @@ body {
   font-weight: 600;
   line-height: 1.2;
   margin: 1.5rem 0;
+  z-index: 10;
 }
 
 .details {
   font-size: 1.4rem;
   line-height: 1.5;
   margin: 0.5rem 0;
+  z-index: 10;
 }
 
 .trans-white {

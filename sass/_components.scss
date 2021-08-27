@@ -2,12 +2,26 @@
   font-size: 1.8rem;
   padding: 2rem 3.2rem;
   border-radius: 10px;
+  position: relative;
+
+  &__bg {
+    position: absolute;
+    top: 0.8rem;
+    right: 15%;
+    z-index: 1;
+    transform: scale(1.1);
+
+    @include respond(tablet-small) {
+      right: 8%;
+    }
+  }
 }
 
 .client-info {
   display: grid;
   width: max-content;
   height: 50px;
+  z-index: 10;
 
   grid-template-columns: 55px max-content;
   grid-template-rows: 1fr 1fr;
@@ -37,12 +51,14 @@
   font-weight: 600;
   line-height: 1.2;
   margin: 1.5rem 0;
+  z-index: 10;
 }
 
 .details {
   font-size: 1.4rem;
   line-height: 1.5;
   margin: 0.5rem 0;
+  z-index: 10;
 }
 
 .trans-white {
