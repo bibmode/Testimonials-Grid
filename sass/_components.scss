@@ -1,0 +1,60 @@
+.box {
+  font-size: 1.8rem;
+  padding: 2rem 3.2rem;
+  border-radius: 3%;
+
+  &--1 {
+  }
+
+  &--2 {
+  }
+
+  &--side {
+  }
+
+  &--4 {
+  }
+
+  &--5 {
+  }
+}
+
+.client-info {
+  display: grid;
+  width: max-content;
+  height: 50px;
+
+  grid-template-columns: 55px max-content;
+  grid-template-rows: 1fr 1fr;
+
+  &__image {
+    grid-row: 1 / -1;
+    align-self: center;
+
+    width: 40px;
+    border-radius: 50%;
+    border: 2px solid var(--color-light-grayish-blue);
+  }
+
+  &__name {
+    font-size: 1.6rem;
+  }
+
+  &__position {
+    font-size: 1.4rem;
+    transform: translateY(-0.5rem);
+  }
+}
+
+.title {
+  font-size: 2.1rem;
+  font-weight: 600;
+  line-height: 1.2;
+  margin: 1rem 0;
+}
+
+.details {
+  font-size: 1.4rem;
+  line-height: 1.4;
+  margin: 0.5rem 0;
+}

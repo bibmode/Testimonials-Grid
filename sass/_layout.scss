@@ -1,25 +1,23 @@
 .container {
   width: 80%;
-  height: 600px;
+  height: 620px;
 
   display: grid;
   align-content: center;
   justify-content: center;
 
   grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: repeat(2, 1fr);
+  grid-template-rows: repeat(2, minmax(200px, 50%));
 
   grid-template-areas: "wide-1 wide-1 short-1 side" "short-2 wide-2 wide-2 side";
 
-  grid-column-gap: 30px;
+  grid-column-gap: 25px;
   grid-row-gap: 25px;
 }
 
 .box {
-  background-color: orangered;
-  font-size: 1.8rem;
-  padding: 1.5rem 2rem;
-  border-radius: 3%;
+  display: flex;
+  flex-direction: column;
 
   &--1,
   &--2,
