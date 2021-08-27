@@ -169,7 +169,7 @@ body {
 
 .box__bg {
   position: absolute;
-  top: 0.8rem;
+  top: 0.6rem;
   right: 15%;
   z-index: 1;
   -webkit-transform: scale(1.1);
