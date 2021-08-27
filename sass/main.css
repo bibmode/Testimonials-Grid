@@ -32,5 +32,80 @@ body {
   min-height: 100vh;
   line-height: 1.6;
   background-color: var(--color-light-grayish-blue);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.container {
+  width: 80%;
+  height: 600px;
+  display: -ms-grid;
+  display: grid;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-grid-columns: (1fr)[4];
+      grid-template-columns: repeat(4, 1fr);
+  -ms-grid-rows: (1fr)[2];
+      grid-template-rows: repeat(2, 1fr);
+      grid-template-areas: "wide-1 wide-1 short-1 side" "short-2 wide-2 wide-2 side";
+  grid-column-gap: 30px;
+  grid-row-gap: 25px;
+}
+
+.box {
+  background-color: orangered;
+  font-size: 1.8rem;
+  padding: 1.5rem 2rem;
+  border-radius: 3%;
+}
+
+.box--1, .box--2, .box--5 {
+  color: var(--color-white);
+}
+
+.box--3, .box--4 {
+  color: var(--color-dark-grayish-blue);
+}
+
+.box--1 {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-area: wide-1;
+  background-color: var(--color-moderate-violet);
+}
+
+.box--2 {
+  background-color: var(--color-dark-grayish-blue);
+}
+
+.box--side {
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 2;
+  -ms-grid-column: 4;
+  grid-area: side;
+  background-color: var(--color-white);
+}
+
+.box--4 {
+  background-color: var(--color-white);
+}
+
+.box--5 {
+  -ms-grid-row: 2;
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 2;
+  grid-area: wide-2;
+  background-color: var(--color-dark-blackish-blue);
 }
 /*# sourceMappingURL=main.css.map */
