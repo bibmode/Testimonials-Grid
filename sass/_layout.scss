@@ -1,18 +1,42 @@
 .container {
-  width: 80%;
-  height: 620px;
+  width: 1176px;
+  height: 85%;
 
   display: grid;
   align-content: center;
   justify-content: center;
 
   grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: repeat(2, minmax(200px, 50%));
+  grid-template-rows: repeat(2, minmax(200px, max-content));
 
   grid-template-areas: "wide-1 wide-1 short-1 side" "short-2 wide-2 wide-2 side";
 
   grid-column-gap: 25px;
   grid-row-gap: 25px;
+
+  @include respond(desktop-small) {
+    width: 93%;
+    margin: 6rem 0;
+  }
+
+  @include respond(tablet) {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-areas: "wide-1 wide-1 short-1" "short-2 wide-2 wide-2" "side side side";
+  }
+
+  @include respond(tablet-small) {
+    width: 90%;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(3, minmax(1fr, max-content));
+    grid-template-areas: "wide-1 wide-1 wide-1 wide-1" "short-1 short-1 short-2 short-2" "wide-2 wide-2 side side";
+  }
+
+  @include respond(tablet-smallest) {
+    width: 90%;
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: repeat(5, minmax(1fr, max-content));
+    grid-template-areas: "wide-1" "short-1" "short-2" "wide-2" "side";
+  }
 }
 
 .box {
@@ -37,6 +61,8 @@
   }
 
   &--2 {
+    grid-area: short-1;
+
     background-color: var(--color-dark-grayish-blue);
   }
 
@@ -47,6 +73,7 @@
   }
 
   &--4 {
+    grid-area: short-2;
     background-color: var(--color-white);
   }
 

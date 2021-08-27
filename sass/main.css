@@ -44,8 +44,8 @@ body {
 }
 
 .container {
-  width: 80%;
-  height: 620px;
+  width: 1176px;
+  height: 85%;
   display: -ms-grid;
   display: grid;
   -ms-flex-line-pack: center;
@@ -55,11 +55,51 @@ body {
           justify-content: center;
   -ms-grid-columns: (1fr)[4];
       grid-template-columns: repeat(4, 1fr);
-  -ms-grid-rows: (minmax(200px, 50%))[2];
-      grid-template-rows: repeat(2, minmax(200px, 50%));
+  -ms-grid-rows: (minmax(200px, max-content))[2];
+      grid-template-rows: repeat(2, minmax(200px, -webkit-max-content));
+      grid-template-rows: repeat(2, minmax(200px, max-content));
       grid-template-areas: "wide-1 wide-1 short-1 side" "short-2 wide-2 wide-2 side";
   grid-column-gap: 25px;
   grid-row-gap: 25px;
+}
+
+@media (max-width: 77.68em) {
+  .container {
+    width: 93%;
+    margin: 6rem 0;
+  }
+}
+
+@media (max-width: 60em) {
+  .container {
+    -ms-grid-columns: (1fr)[3];
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-areas: "wide-1 wide-1 short-1" "short-2 wide-2 wide-2" "side side side";
+  }
+}
+
+@media (max-width: 38.75em) {
+  .container {
+    width: 90%;
+    -ms-grid-columns: (1fr)[4];
+        grid-template-columns: repeat(4, 1fr);
+    -ms-grid-rows: (minmax(1fr, max-content))[3];
+        grid-template-rows: repeat(3, minmax(1fr, -webkit-max-content));
+        grid-template-rows: repeat(3, minmax(1fr, max-content));
+        grid-template-areas: "wide-1 wide-1 wide-1 wide-1" "short-1 short-1 short-2 short-2" "wide-2 wide-2 side side";
+  }
+}
+
+@media (max-width: 33.6875em) {
+  .container {
+    width: 90%;
+    -ms-grid-columns: (1fr)[1];
+        grid-template-columns: repeat(1, 1fr);
+    -ms-grid-rows: (minmax(1fr, max-content))[5];
+        grid-template-rows: repeat(5, minmax(1fr, -webkit-max-content));
+        grid-template-rows: repeat(5, minmax(1fr, max-content));
+        grid-template-areas: "wide-1" "short-1" "short-2" "wide-2" "side";
+  }
 }
 
 .box {
@@ -89,6 +129,9 @@ body {
 }
 
 .box--2 {
+  -ms-grid-row: 1;
+  -ms-grid-column: 3;
+  grid-area: short-1;
   background-color: var(--color-dark-grayish-blue);
 }
 
@@ -101,6 +144,9 @@ body {
 }
 
 .box--4 {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  grid-area: short-2;
   background-color: var(--color-white);
 }
 
@@ -115,7 +161,7 @@ body {
 .box {
   font-size: 1.8rem;
   padding: 2rem 3.2rem;
-  border-radius: 3%;
+  border-radius: 10px;
 }
 
 .client-info {
