@@ -6,13 +6,13 @@
   }
 
   @if $breakpoint == tablet {
-    @media (max-width: 60em) {
+    @media (max-width: 63em) {
       @content;
     }
   }
 
   @if $breakpoint == tablet-small {
-    @media (max-width: 38.75em) {
+    @media (max-width: 50em) {
       @content;
     }
   }
